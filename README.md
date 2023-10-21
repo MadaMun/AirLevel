@@ -71,10 +71,15 @@ void loop(){
   return;
  } 
 ```
+![Youtube](https://github.com/MadaMun/language_C/assets/94043213/86e723f7-8323-46f6-ac53-1571b47a07c0)
 ## ตัวอย่างการส่งข้อความผ่านไลน์
 > >  ![Line (download)](https://media.discordapp.net/attachments/865671142626033694/974340163775905892/279510677_733612044304531_965625920282107422_n.png?width=324&height=701)
 ## วิดีโอนำเสนอชิ้นงาน
-> * [Youtube](https://www.youtube.com/watch?v=nYhOadwQpEU)
+
+![](https://github.com/MadaMun/language_C/assets/94043213/627c35bf-ef36-426a-9b0c-6757f899c141)
+https://github.com/MadaMun/language_C/assets/94043213/627c35bf-ef36-426a-9b0c-6757f899c141
+
+
 ---
 # Members <img src="https://www.iwlconsulting.com/wp-content/uploads/2020/09/teamwork-icon-200x200-1.gif"  width="50">
 
