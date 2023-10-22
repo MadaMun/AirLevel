@@ -1,3 +1,4 @@
+![giphy](https://github.com/MadaMun/AirLevel/assets/94043213/0194e8bd-68d9-4fb2-800e-9995304baa86)
 # AirLevel
 > This AirLevel project is part of Computer Programming Project, KMITL Semester 10/2022 2st Year
  ## บทคัดย่อ 📝
