@@ -1,0 +1,63 @@
+
+#include <TridentTD_LineNotify.h>
+
+#define SSID        "xxxxxx"      // SSID ชื่อ Wifi ที่จะเชื่อมต่อ
+#define PASSWORD    "xxxxxx"     // PASS ใส่รหัส Wifi
+#define LINE_TOKEN  "xxxxxxxxxxxxxxxxxxxxxx"   //  ใส่ รหัส TOKEN ที่ได้มาจากการ generate ด้วย Line Notify
+
+////////////////////////
+// Pin Definitions //
+/////////////////////////
+#include <TridentTD_LineNotify.h>
+const int LED_PIN = LED_BUILTIN; // Thing's onboard, green LED
+const int ANALOG_PIN = A0; // The only analog pin on the Thing
+const int DIGITAL_PIN = 12; // Digital pin to be read
+
+
+void setup() 
+{
+  initHardware();
+  Serial.begin(115200); // Initialize the serial communication
+  digitalWrite(LED_PIN, HIGH);
+  Serial.println(LINE.getVersion());
+
+  WiFi.begin(SSID, PASSWORD);
+  Serial.printf("WiFi connecting to %s\n",  SSID);
+  while (WiFi.status() != WL_CONNECTED) {
+    Serial.print(".");
+    delay(400);
+  }
+  Serial.printf("\nWiFi connected\nIP : ");
+  Serial.println(WiFi.localIP());
+
+  // กำหนด Line Token
+  LINE.setToken(LINE_TOKEN);
+}
+
+void loop() 
+{
+  // Read analog data from the dust sensor
+  int dustConcentration = analogRead(ANALOG_PIN);
+
+  // Read digital data from another sensor, if needed
+  int digitalValue = digitalRead(DIGITAL_PIN);
+
+  // Print the data to the serial monitor
+  Serial.print("Dust Concentration (analog): ");
+  Serial.println(dustConcentration);
+  LINE.notify("");
+  LINE.notify(dustConcentration);
+
+  // Print the digital value, if applicable
+
+
+  delay(50000); // Adjust the delay to control the data printing frequency
+}
+
+void initHardware()
+{
+  pinMode(DIGITAL_PIN, INPUT_PULLUP);
+  pinMode(LED_PIN, OUTPUT);
+  digitalWrite(LED_PIN, LOW);
+  // No need to set ANALOG_PIN as input, that's all it can be.
+}
