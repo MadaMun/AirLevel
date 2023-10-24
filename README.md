@@ -19,8 +19,8 @@
 ## อุปกรณ์ 🛠
 > 1. Breadboard  
 > <img src="https://github.com/MadaMun/language_C/assets/94043213/4f984cb9-8093-4ce5-9acf-8c4d924d9c1b" width="200" height="200" /></br> 
-> 2. Nodemcu esp8266  
-> <img src="https://github.com/MadaMun/language_C/assets/94043213/7a771aa4-5dcf-404d-b279-35bdd114d90d" width="200" height="200" /></br> 
+> 2. Node mcu esp8266 v2  
+> <img src="https://github.com/MadaMun/AirLevel/assets/94043213/85384ed9-9a2d-4fab-b4a5-e57b78865af7" width="200" height="200" /></br> 
 > 3. sharp gp2y1010au0f dust sensor  
 > <img src="https://github.com/MadaMun/language_C/assets/94043213/27dc01a0-2a05-4140-9624-31254541cdd0" width="200" height="200" /></br> 
 > 4. สายไฟจั้มเปอร์  
@@ -33,48 +33,62 @@
 > >  ![microcontroller (download)](https://media.discordapp.net/attachments/865671142626033694/974340163226456105/279963943_378952927534906_8536625025542008159_n.jpg?width=526&height=701)
 ## Code การเชื่อมต่อตัว Microcontroller กับ LINE 🧑‍💻
 ```C
-void setup()
+void setup() 
 {
-  Serial.begin(9600);
-  dht.setup(2); // data pin 2
-  
-  WiFi.begin(ssid, pass); 
-  delay(1000);
-  Serial.print("Connecting to ");
-  Serial.print(ssid);
-  Serial.print("\nPleas wait"); 
-  
-  while (WiFi.status() != WL_CONNECTED) 
-  {
-    Serial.print(".");
-    delay(300);
-  }
-  
-  Serial.print("\nWiFi connected\nIP : ");
-  Serial.println(WiFi.localIP());
-  LINE.setToken(LINE_TOKEN);  // กำหนด Line Token
-  LINE.notify("เชื่อมต่อกับ WeatherToday สำเร็จเเล้ว");
+  initHardware();
+  Serial.begin(115200); // Initialize the serial communication
+  digitalWrite(LED_PIN, HIGH);
+  Serial.println(LINE.getVersion());
 
-  ts = ts1 = millis();
+  WiFi.begin(SSID, PASSWORD);
+  Serial.printf("WiFi connecting to %s\n",  SSID);
+  while (WiFi.status() != WL_CONNECTED) {
+    Serial.print(".");
+    delay(400);
+  }
+  Serial.printf("\nWiFi connected\nIP : ");
+  Serial.println(WiFi.localIP());
+
+  // กำหนด Line Token
+  LINE.setToken(LINE_TOKEN);
 }
 ```
 ## Code การส่งข้อความคุณภาพของอากาศจาก Microcontroller ไปที่ LINE 🧑‍💻
 ```C
-void loop(){
-  delay(dht.getMinimumSamplingPeriod());
-  float humidity = dht.getHumidity(); // ดึงค่าความชื้น
-  float temperature = dht.getTemperature(); // ดึงค่าอุณหภูมิ
-  ts = millis();
-  //DHT.read11(dht_apin);
- if ((ts - ts1 >= 10000) && (WiFi.status() == WL_CONNECTED))
- { 
-  LINE.notify("Temperature : " + String(temperature) + " °C" +"\n"
-  + "Humidity : " + String(humidity)) + " %";
-  return;
- } 
+void loop() 
+{
+  // Read analog data from the dust sensor
+  int dustConcentration = analogRead(ANALOG_PIN);
+
+  // Read digital data from another sensor, if needed
+  int digitalValue = digitalRead(DIGITAL_PIN);
+
+  // Print the data to the serial monitor
+  Serial.print("Dust Concentration (analog): ");
+  Serial.println(dustConcentration);
+  LINE.notify("");
+  LINE.notify("Dust Concentration "+String(dustConcentration)+" ug/m^3");
+  if(dustConcentration>50){
+    LINE.notify("Air Condition is not quite good, be careful.");
+  }
+
+  // Print the digital value, if applicable
+
+
+  delay(60000); // Adjust the delay to control the data printing frequency
+}
+
+void initHardware()
+{
+  pinMode(DIGITAL_PIN, INPUT_PULLUP);
+  pinMode(LED_PIN, OUTPUT);
+  digitalWrite(LED_PIN, LOW);
+  // No need to set ANALOG_PIN as input, that's all it can be.
+}
 ```
 ## ตัวอย่างการส่งข้อความผ่านไลน์ 💬
-> >  ![Line (download)](https://media.discordapp.net/attachments/865671142626033694/974340163775905892/279510677_733612044304531_965625920282107422_n.png?width=324&height=701)
+> > <img src="https://github.com/MadaMun/AirLevel/assets/94043213/6154e331-1d09-4cc3-8ac2-b3bf26ce99cc" width="400" height="600" /></br>
+
 
 ## วิดีโอนำเสนอชิ้นงาน <img src="https://github.com/MadaMun/language_C/assets/94043213/7491e0c9-fac8-49c1-893c-e50b9d82b7f8" width="30" height="20" />
 
