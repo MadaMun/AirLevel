@@ -26,7 +26,7 @@
 > <img src="https://github.com/MadaMun/language_C/assets/94043213/4f984cb9-8093-4ce5-9acf-8c4d924d9c1b" width="200" height="200" /></br> 
 > 2. Node mcu esp8266 v2  
 > <img src="https://github.com/MadaMun/AirLevel/assets/94043213/85384ed9-9a2d-4fab-b4a5-e57b78865af7" width="200" height="200" /></br> 
-> 3. sharp gp2y1010au0f dust sensor  
+> 3. ชุด dust sensor sharp gp2y1010au0f  
 > <img src="https://github.com/MadaMun/language_C/assets/94043213/27dc01a0-2a05-4140-9624-31254541cdd0" width="200" height="200" /></br> 
 > 4. สายไฟจั้มเปอร์  
 > <img src="https://github.com/MadaMun/language_C/assets/94043213/9d675d9f-e22b-484d-ae68-75eed5378bcc" width="200" height="200" /></br> 
