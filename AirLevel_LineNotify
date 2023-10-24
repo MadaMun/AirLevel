@@ -1,9 +1,9 @@
 
 #include <TridentTD_LineNotify.h>
 
-#define SSID        "xxxxxx"      // SSID ชื่อ Wifi ที่จะเชื่อมต่อ
-#define PASSWORD    "xxxxxx"     // PASS ใส่รหัส Wifi
-#define LINE_TOKEN  "xxxxxxxxxxxxxxxxxxxxxx"   //  ใส่ รหัส TOKEN ที่ได้มาจากการ generate ด้วย Line Notify
+#define SSID        "Personal"      // บรรทัดที่ 11 ให้ใส่ ชื่อ Wifi ที่จะเชื่อมต่อ
+#define PASSWORD    "mm2921541"     // บรรทัดที่ 12 ใส่ รหัส Wifi
+#define LINE_TOKEN  "uwCUmVdaRO3tQufeiRJMBaJ54Sgl48jnIKor7LyDXuP"   // บรรทัดที่ 13 ใส่ รหัส TOKEN ที่ได้มาจากข้างบน
 
 ////////////////////////
 // Pin Definitions //
@@ -46,7 +46,10 @@ void loop()
   Serial.print("Dust Concentration (analog): ");
   Serial.println(dustConcentration);
   LINE.notify("");
-  LINE.notify(dustConcentration);
+  LINE.notify("Dust Concentration "+String(dustConcentration)+" ug/m^3");
+  if(dustConcentration>50){
+    LINE.notify("Air Condition is not quite good, be careful.");
+  }
 
   // Print the digital value, if applicable
 
