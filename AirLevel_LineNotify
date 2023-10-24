@@ -51,7 +51,7 @@ void loop()
   // Print the digital value, if applicable
 
 
-  delay(50000); // Adjust the delay to control the data printing frequency
+  delay(60000); // Adjust the delay to control the data printing frequency
 }
 
 void initHardware()
