@@ -68,7 +68,8 @@ void loop(){
   //DHT.read11(dht_apin);
  if ((ts - ts1 >= 10000) && (WiFi.status() == WL_CONNECTED))
  { 
-  LINE.notify("Temperature : " + String(temperature) + " °C" +"\n" + "Humidity : " + String(humidity)) + " %";
+  LINE.notify("Temperature : " + String(temperature) + " °C" +"\n"
+  + "Humidity : " + String(humidity)) + " %";
   return;
  } 
 ```
@@ -84,7 +85,7 @@ void loop(){
 
 | Student ID | ชื่อ - นามสกุล |
 | :--------  | :-------- |
-|   64070121 |   นางสาวนิโลบล ตรีสุคนธรัตน์ |
-|   64070142 |   	นายพงศกร นพรัตยาภรณ์   |
-|   64070155 |   	นางสาวพิชญา พัฒน์เจริญ  |
-|   64070168   |   นางสาวภัณฑิรา ปิ่นกิ่งทอง |
+|   65070121 |   นางสาวนิโลบล ตรีสุคนธรัตน์ |
+|   65070142 |   	นายพงศกร นพรัตยาภรณ์   |
+|   65070155 |   	นางสาวพิชญา พัฒน์เจริญ  |
+|   65070168   |   นางสาวภัณฑิรา ปิ่นกิ่งทอง |
