@@ -1,0 +1,40 @@
+////////////////////////
+// Pin Definitions //
+/////////////////////////
+const int LED_PIN = LED_BUILTIN; // Thing's onboard, green LED
+const int ANALOG_PIN = A0; // The only analog pin on the Thing
+const int DIGITAL_PIN = 12; // Digital pin to be read
+
+void setup() 
+{
+  initHardware();
+  Serial.begin(9600); // Initialize the serial communication
+  digitalWrite(LED_PIN, HIGH);
+}
+
+void loop() 
+{
+  // Read analog data from the dust sensor
+  int dustConcentration = analogRead(ANALOG_PIN);
+
+  // Read digital data from another sensor, if needed
+  int digitalValue = digitalRead(DIGITAL_PIN);
+
+  // Print the data to the serial monitor
+  Serial.print("Dust Concentration (analog): ");
+  Serial.println(dustConcentration);
+
+  // Print the digital value, if applicable
+  Serial.print("Digital Sensor Value: ");
+  Serial.println(digitalValue);
+
+  delay(1000); // Adjust the delay to control the data printing frequency
+}
+
+void initHardware()
+{
+  pinMode(DIGITAL_PIN, INPUT_PULLUP);
+  pinMode(LED_PIN, OUTPUT);
+  digitalWrite(LED_PIN, LOW);
+  // No need to set ANALOG_PIN as input, that's all it can be.
+}
