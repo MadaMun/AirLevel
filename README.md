@@ -100,7 +100,8 @@ void initHardware()
 [Youtube](https://www.youtube.com/watch?v=yIZvxhitxZQ)
 
 ---
-# Members <img src="https://github.com/MadaMun/AirLevel/assets/94043213/ae07bf57-62a8-47fb-97ad-77f84f855b0f"  width="50">
+# Members
+<img src="https://github.com/MadaMun/AirLevel/assets/94043213/ae07bf57-62a8-47fb-97ad-77f84f855b0f"  width="316" height="400">
 
 | Student ID | ชื่อ - นามสกุล |
 | :--------  | :-------- |
