@@ -33,9 +33,9 @@
 
 
 ## โปสเตอร์ ✨
-> ![poster (download)](https://media.discordapp.net/attachments/865671142626033694/974339698401116220/poster_compro.jpg?width=496&height=702)
+> <img src="https://github.com/MadaMun/AirLevel/assets/94043213/69164f2e-9754-4e6b-8a5c-dc6ac890eea0" width="400" height="600" /></br>
 ## ชิ้นงาน 📦️
-> >  ![microcontroller (download)](https://media.discordapp.net/attachments/865671142626033694/974340163226456105/279963943_378952927534906_8536625025542008159_n.jpg?width=526&height=701)
+> > <img src="https://github.com/MadaMun/AirLevel/assets/94043213/b3563782-0440-4920-802d-f7c85d7f506c" width="600" height="400" /></br>
 ## Code การเชื่อมต่อตัว Microcontroller กับ LINE 🧑‍💻
 ```C
 void setup() 
@@ -97,10 +97,10 @@ void initHardware()
 
 ## วิดีโอนำเสนอชิ้นงาน <img src="https://github.com/MadaMun/language_C/assets/94043213/7491e0c9-fac8-49c1-893c-e50b9d82b7f8" width="30" height="20" />
 
-[Youtube](https://www.youtube.com/watch?v=nYhOadwQpEU)
+[Youtube](https://www.youtube.com/watch?v=yIZvxhitxZQ)
 
 ---
-# Members <img src="https://www.iwlconsulting.com/wp-content/uploads/2020/09/teamwork-icon-200x200-1.gif"  width="50">
+# Members <img src="https://github.com/MadaMun/AirLevel/assets/94043213/ae07bf57-62a8-47fb-97ad-77f84f855b0f"  width="50">
 
 | Student ID | ชื่อ - นามสกุล |
 | :--------  | :-------- |
