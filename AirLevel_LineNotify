@@ -1,9 +1,10 @@
+//ส่วนการเชื่อมต่อไลน์
 
 #include <TridentTD_LineNotify.h>
 
-#define SSID        "Personal"      // บรรทัดที่ 11 ให้ใส่ ชื่อ Wifi ที่จะเชื่อมต่อ
-#define PASSWORD    "mm2921541"     // บรรทัดที่ 12 ใส่ รหัส Wifi
-#define LINE_TOKEN  "uwCUmVdaRO3tQufeiRJMBaJ54Sgl48jnIKor7LyDXuP"   // บรรทัดที่ 13 ใส่ รหัส TOKEN ที่ได้มาจากข้างบน
+#define SSID        "xxxxxx"      // บรรทัดที่ 11 ให้ใส่ ชื่อ Wifi ที่จะเชื่อมต่อ
+#define PASSWORD    "xxxxxx"     // บรรทัดที่ 12 ใส่ รหัส Wifi
+#define LINE_TOKEN  "xxxxxxxxxxxxxxxx"   // บรรทัดที่ 13 ใส่ รหัส TOKEN ที่ได้มาจากข้างบน
 
 ////////////////////////
 // Pin Definitions //
